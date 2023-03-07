@@ -8,7 +8,7 @@ class CustomUser(AbstractUser):
     last_name = models.CharField(max_length=50)
     email = models.EmailField(max_length=254, unique=True)
     date_of_birth = models.DateField(default=timezone.now)
-    profile_picture = models.ImageField(upload_to='static/')
+    profile_picture = models.ImageField(upload_to='static/', null=True, blank=True)
 
     def __str__(self):
-        return f"{self.first_name} {self.last_name} ({self.email})"
+        return f"{self.first_name} {self.last_name}"
