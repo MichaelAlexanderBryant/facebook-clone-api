@@ -15,7 +15,7 @@ class CustomUserAdmin(UserAdmin):
         "is_superuser",
     ]
     fieldsets = ((None, {"fields": ("email", "first_name", "last_name", "date_of_birth", "profile_picture", "friends",)}),)
-    add_fieldsets = ((None, {"fields": ("email", "password1", "password2",)}),)
+    add_fieldsets = ((None, {"fields": ("first_name", "last_name", "email", "password1", "password2",)}),)
 
 admin.site.register(CustomUser, CustomUserAdmin)
 admin.site.register(FriendRequest)
