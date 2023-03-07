@@ -7,6 +7,7 @@ class CustomUserAdmin(UserAdmin):
     add_form = CustomUserCreationForm
     form = CustomUserChangeForm
     model = CustomUser
+    ordering=('email',)
     list_display = [
         "first_name",
         "last_name",
