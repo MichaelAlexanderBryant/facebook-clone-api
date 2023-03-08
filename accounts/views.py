@@ -3,7 +3,7 @@ from rest_framework import generics
 from .models import CustomUser, FriendRequest
 from .serializers import UserSerializer, FriendRequestSerializer
 
-class ListUser(generics.ListCreateAPIView):
+class ListUser(generics.ListAPIView):
     queryset = CustomUser.objects.all()
     serializer_class = UserSerializer
 
