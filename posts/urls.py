@@ -1,5 +1,7 @@
 from django.urls import path
 from .views import ListPost, DetailPost, ListComment, DetailComment
+from rest_framework_simplejwt.views import TokenRefreshView
+
 
 urlpatterns = [
     path("<int:pk>/", DetailPost.as_view(), name="comment_detail"),
