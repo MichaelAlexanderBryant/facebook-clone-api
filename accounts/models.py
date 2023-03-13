@@ -47,7 +47,6 @@ class CustomUser(AbstractUser):
     profile_picture = models.ImageField(upload_to='static/', null=True, blank=True)
     friends = models.ManyToManyField("CustomUser", blank=True)
 
-    
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
 

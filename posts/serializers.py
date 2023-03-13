@@ -1,4 +1,5 @@
 from rest_framework import serializers
+from django.conf import settings
 
 from .models import Post, Comment
 
@@ -10,8 +11,9 @@ class PostSerializer(serializers.ModelSerializer):
             "body",
             "image",
             "author",
-            "likes",
             "created_at",
+            "likes",
+            "liked_by",
         )
 
 class CommentSerializer(serializers.ModelSerializer):
@@ -22,6 +24,7 @@ class CommentSerializer(serializers.ModelSerializer):
             "comment",
             "author",
             "post",
-            "likes",
             "created_at",
+            "likes",
+            "liked_by",
         )
