@@ -13,7 +13,7 @@ class Post(models.Model):
         return f"By {self.author} created at {self.created_at}"
     
 class Comment(models.Model):
-    comment = models.TextField(max_length=8000)
+    comment = models.TextField(max_length=8000, null=True, blank=True)
     author = models.ForeignKey(settings.AUTH_USER_MODEL, related_name="comment_author", on_delete=models.CASCADE)
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)

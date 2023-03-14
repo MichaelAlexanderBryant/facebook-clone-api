@@ -11,7 +11,6 @@ class ListPost(generics.ListCreateAPIView):
     serializer_class = PostSerializer
 
 class DetailPost(generics.RetrieveUpdateDestroyAPIView):
-    permission_classes = (IsAuthorOrReadOnly,)
     queryset = Post.objects.all()
     serializer_class = PostSerializer
 
@@ -20,6 +19,5 @@ class ListComment(generics.ListCreateAPIView):
     serializer_class = CommentSerializer
 
 class DetailComment(generics.RetrieveUpdateDestroyAPIView):
-    permission_classes = (IsAuthorOrReadOnly,)
     queryset = Comment.objects.all()
     serializer_class = CommentSerializer
